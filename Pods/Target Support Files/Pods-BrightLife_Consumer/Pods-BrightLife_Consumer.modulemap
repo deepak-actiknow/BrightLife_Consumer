@@ -1,0 +1,6 @@
+framework module Pods_BrightLife_Consumer {
+  umbrella header "Pods-BrightLife_Consumer-umbrella.h"
+
+  export *
+  module * { export * }
+}

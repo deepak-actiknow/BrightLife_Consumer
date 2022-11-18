@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "B510464D-FF33-4B14-9152-291CB9E903F9"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "74D42A74-CD5A-4918-B573-C86E398709AD"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BrightLife_Consumer/Modules/Authentication/Authentication/ViewControllers/GoogleProfileViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
+            landmarkName = "datePickerAction(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A17596FD-E51E-42DC-96AA-B373D6B533D3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BrightLife_Consumer/Modules/Authentication/Authentication/ViewControllers/GoogleProfileViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
+            landmarkName = "datePickerAction(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B78F5C98-2FC2-4F35-9F5B-F848491B4FDA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BrightLife_Consumer/Modules/Authentication/Authentication/ViewControllers/PhoneProfileViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "datePicketButtonAction(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "26B73924-7CE1-4659-81D6-BC25925FEFAE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BrightLife_Consumer/Modules/Authentication/Authentication/ViewControllers/PhoneProfileViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "datePicketButtonAction(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "53E77EA0-4701-4562-A46E-F1D656A2FC0C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BrightLife_Consumer/App Frameworks/Service Helper/ServiceHelper.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "createRequest(method:showHud:params:apiName:completionHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "189C65E7-BFBF-4C3F-B509-4E8E81081098"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BrightLife_Consumer/Modules/Authentication/Authentication/ViewModel/AuthViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "verifyOTP(target:number:otp:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "189C65E7-BFBF-4C3F-B509-4E8E81081098 - d89818eefd73d49"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BrightLife_Consumer.AuthenticationViewModel.verifyOTP(target: __C.UIViewController, number: Swift.String, otp: Swift.String) -&gt; ()"
+                  moduleName = "BrightLife_Consumer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/madhuraj_actiknow/iCloud%20Drive%20(Archive)%20-%201/Desktop/BrightLife_Consumer/BrightLife_Consumer/Modules/Authentication/Authentication/ViewModel/AuthViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "396">
+               </Location>
+               <Location
+                  uuid = "189C65E7-BFBF-4C3F-B509-4E8E81081098 - a5b3dcaf441d0dfc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt;, Swift.Bool) -&gt; () in BrightLife_Consumer.AuthenticationViewModel.verifyOTP(target: __C.UIViewController, number: Swift.String, otp: Swift.String) -&gt; ()"
+                  moduleName = "BrightLife_Consumer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/madhuraj_actiknow/iCloud%20Drive%20(Archive)%20-%201/Desktop/BrightLife_Consumer/BrightLife_Consumer/Modules/Authentication/Authentication/ViewModel/AuthViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "76">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "83E5D919-1904-4B8E-83D5-E673376967E5"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BrightLife_Consumer/App Frameworks/Services/APIServices.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "otpVerify(params:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "83E5D919-1904-4B8E-83D5-E673376967E5 - ceba3fbbb3abcd6c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BrightLife_Consumer.APIServices.otpVerify(params: Swift.Dictionary&lt;Swift.String, Swift.AnyObject&gt;, completion: (Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt;, Swift.Bool) -&gt; ()) -&gt; ()"
+                  moduleName = "BrightLife_Consumer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/madhuraj_actiknow/iCloud%20Drive%20(Archive)%20-%201/Desktop/BrightLife_Consumer/BrightLife_Consumer/App%20Frameworks/Services/APIServices.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "64">
+               </Location>
+               <Location
+                  uuid = "83E5D919-1904-4B8E-83D5-E673376967E5 - 19ec89ff05ebea88"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.AnyObject&gt;, Swift.Optional&lt;__C.NSError&gt;) -&gt; () in BrightLife_Consumer.APIServices.otpVerify(params: Swift.Dictionary&lt;Swift.String, Swift.AnyObject&gt;, completion: (Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt;, Swift.Bool) -&gt; ()) -&gt; ()"
+                  moduleName = "BrightLife_Consumer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/madhuraj_actiknow/iCloud%20Drive%20(Archive)%20-%201/Desktop/BrightLife_Consumer/BrightLife_Consumer/App%20Frameworks/Services/APIServices.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "124">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

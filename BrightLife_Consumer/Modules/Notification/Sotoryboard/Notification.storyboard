@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="72F-gd-hgs">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Lato-Bold.ttf">
+            <string>Lato-Bold</string>
+        </array>
+        <array key="Lato-Regular.ttf">
+            <string>Lato-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Notification View Controller-->
+        <scene sceneID="sRV-ah-kx8">
+            <objects>
+                <viewController storyboardIdentifier="NotificationViewController" id="72F-gd-hgs" customClass="NotificationViewController" customModule="BrightLife_Consumer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="etc-2n-DIU">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qQC-Bl-nak">
+                                <rect key="frame" x="0.0" y="59" width="393" height="60"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notification" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vgd-5h-9hU">
+                                        <rect key="frame" x="151.33333333333334" y="19.666666666666671" width="90.666666666666657" height="20.666666666666671"/>
+                                        <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="17"/>
+                                        <color key="textColor" red="0.2274509804" green="0.22352941179999999" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d8F-Ws-PNH">
+                                        <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="d8F-Ws-PNH" secondAttribute="height" multiplier="1:1" id="9R7-RD-nmR"/>
+                                        </constraints>
+                                        <color key="tintColor" red="0.2274509804" green="0.22352941179999999" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="chevron.left" catalog="system" title=" "/>
+                                        <connections>
+                                            <action selector="backButtonAction:" destination="72F-gd-hgs" eventType="touchUpInside" id="m43-gv-hGL"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="299-mh-kwS"/>
+                                    <constraint firstAttribute="bottom" secondItem="d8F-Ws-PNH" secondAttribute="bottom" id="65w-xz-y8Y"/>
+                                    <constraint firstItem="vgd-5h-9hU" firstAttribute="centerX" secondItem="qQC-Bl-nak" secondAttribute="centerX" id="6Yk-0l-WlO"/>
+                                    <constraint firstItem="d8F-Ws-PNH" firstAttribute="top" secondItem="qQC-Bl-nak" secondAttribute="top" id="HEe-nv-SJL"/>
+                                    <constraint firstItem="vgd-5h-9hU" firstAttribute="centerY" secondItem="qQC-Bl-nak" secondAttribute="centerY" id="U32-Vx-TTz"/>
+                                    <constraint firstItem="d8F-Ws-PNH" firstAttribute="leading" secondItem="qQC-Bl-nak" secondAttribute="leading" id="XFr-aQ-OEq"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="yVj-vr-xef">
+                                <rect key="frame" x="0.0" y="119" width="393" height="699"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="NotificationCell" rowHeight="140" id="kOA-qE-rzc" customClass="NotificationCell" customModule="BrightLife_Consumer" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="140"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kOA-qE-rzc" id="y0o-R4-hBW">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="140"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xcb-Ls-OrY">
+                                                    <rect key="frame" x="16" y="139" width="361" height="1"/>
+                                                    <color key="backgroundColor" red="0.92549019607843142" green="0.89803921568627454" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="1" id="haF-hM-MdA"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Peyush Bhatia" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="58m-0I-Hqu">
+                                                    <rect key="frame" x="16.000000000000007" y="16" width="107.66666666666669" height="25"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="25" id="4i0-zF-0Pl"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="17"/>
+                                                    <color key="textColor" red="0.2274509804" green="0.22352941179999999" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A life coach with expertise in Angel Healing, EFT, Pranic Healing, Reiki &amp; many other modalities." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uXi-8w-Hxg">
+                                                    <rect key="frame" x="16" y="49" width="361" height="59"/>
+                                                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="11"/>
+                                                    <color key="textColor" red="0.2274509804" green="0.22352941179999999" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 hr ago" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nT6-gW-7ec">
+                                                    <rect key="frame" x="16" y="116" width="361" height="15"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="15" id="H1R-Eg-NwF"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="11"/>
+                                                    <color key="textColor" red="0.2274509804" green="0.22352941179999999" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="xcb-Ls-OrY" secondAttribute="bottom" id="0YV-aa-GWC"/>
+                                                <constraint firstItem="nT6-gW-7ec" firstAttribute="leading" secondItem="y0o-R4-hBW" secondAttribute="leading" constant="16" id="8wu-Rc-Rzi"/>
+                                                <constraint firstItem="xcb-Ls-OrY" firstAttribute="top" secondItem="nT6-gW-7ec" secondAttribute="bottom" constant="8" id="91w-Ku-gOc"/>
+                                                <constraint firstItem="xcb-Ls-OrY" firstAttribute="leading" secondItem="y0o-R4-hBW" secondAttribute="leading" constant="16" id="FTg-Gh-bgF"/>
+                                                <constraint firstAttribute="trailing" secondItem="xcb-Ls-OrY" secondAttribute="trailing" constant="16" id="J3M-lU-BZi"/>
+                                                <constraint firstAttribute="trailing" secondItem="uXi-8w-Hxg" secondAttribute="trailing" constant="16" id="Qve-xJ-nYl"/>
+                                                <constraint firstItem="nT6-gW-7ec" firstAttribute="top" secondItem="uXi-8w-Hxg" secondAttribute="bottom" constant="8" id="W62-FI-egf"/>
+                                                <constraint firstItem="uXi-8w-Hxg" firstAttribute="leading" secondItem="y0o-R4-hBW" secondAttribute="leading" constant="16" id="Y2h-J2-clf"/>
+                                                <constraint firstAttribute="trailing" secondItem="nT6-gW-7ec" secondAttribute="trailing" constant="16" id="ZOe-Dd-MEW"/>
+                                                <constraint firstItem="58m-0I-Hqu" firstAttribute="leading" secondItem="y0o-R4-hBW" secondAttribute="leading" constant="16" id="bk7-Sx-k6v"/>
+                                                <constraint firstItem="58m-0I-Hqu" firstAttribute="top" secondItem="y0o-R4-hBW" secondAttribute="top" constant="16" id="fLH-1I-co2"/>
+                                                <constraint firstItem="uXi-8w-Hxg" firstAttribute="top" secondItem="58m-0I-Hqu" secondAttribute="bottom" constant="8" id="wV0-UA-4Pe"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="notificationDescriptionLabel" destination="uXi-8w-Hxg" id="pg0-4h-hRf"/>
+                                            <outlet property="notificationTitle" destination="58m-0I-Hqu" id="H7F-nl-YeD"/>
+                                            <outlet property="timeLabel" destination="nT6-gW-7ec" id="kQO-n5-nfC"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="72F-gd-hgs" id="OpI-X4-x7c"/>
+                                    <outlet property="delegate" destination="72F-gd-hgs" id="S9B-0q-u47"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="tEk-K8-Vza"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="yVj-vr-xef" firstAttribute="top" secondItem="qQC-Bl-nak" secondAttribute="bottom" id="FzK-Ae-GVw"/>
+                            <constraint firstItem="tEk-K8-Vza" firstAttribute="bottom" secondItem="yVj-vr-xef" secondAttribute="bottom" id="M28-Cc-lPK"/>
+                            <constraint firstItem="yVj-vr-xef" firstAttribute="leading" secondItem="tEk-K8-Vza" secondAttribute="leading" id="Nj4-5Y-HO7"/>
+                            <constraint firstItem="qQC-Bl-nak" firstAttribute="top" secondItem="tEk-K8-Vza" secondAttribute="top" id="Poh-il-WOi"/>
+                            <constraint firstItem="tEk-K8-Vza" firstAttribute="trailing" secondItem="qQC-Bl-nak" secondAttribute="trailing" id="lZm-KS-6mL"/>
+                            <constraint firstItem="qQC-Bl-nak" firstAttribute="leading" secondItem="etc-2n-DIU" secondAttribute="leading" id="rTL-ar-1J0"/>
+                            <constraint firstItem="tEk-K8-Vza" firstAttribute="trailing" secondItem="yVj-vr-xef" secondAttribute="trailing" id="uXe-7F-bMP"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="navBarView" destination="qQC-Bl-nak" id="W6u-4R-24l"/>
+                        <outlet property="notificationTableView" destination="yVj-vr-xef" id="Eg8-51-lDC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aWg-uf-BNV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-651.14503816793888" y="-218.3098591549296"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="chevron.left" catalog="system" width="97" height="128"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
