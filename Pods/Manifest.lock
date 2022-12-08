@@ -6,10 +6,7 @@ PODS:
     - AppAuth/ExternalUserAgent (= 1.4.0)
   - AppAuth/Core (1.4.0)
   - AppAuth/ExternalUserAgent (1.4.0)
-  - DatePicker (1.3.1):
-    - Extended
   - DropDown (2.3.13)
-  - Extended (1.0.5)
   - FBAEMKit (12.2.0):
     - FBSDKCoreKit_Basics (= 12.2.0)
   - FBSDKCoreKit (12.2.0):
@@ -74,7 +71,6 @@ PODS:
 DEPENDENCIES:
   - AARatingBar
   - Alamofire
-  - DatePicker
   - DropDown
   - FBSDKLoginKit
   - FirebaseAuth
@@ -88,9 +84,7 @@ SPEC REPOS:
     - AARatingBar
     - Alamofire
     - AppAuth
-    - DatePicker
     - DropDown
-    - Extended
     - FBAEMKit
     - FBSDKCoreKit
     - FBSDKCoreKit_Basics
@@ -114,9 +108,7 @@ SPEC CHECKSUMS:
   AARatingBar: dc54d24687ae97688ffdb29738332d0bc5c0c09f
   Alamofire: f3b09a368f1582ab751b3fff5460276e0d2cf5c9
   AppAuth: 31bcec809a638d7bd2f86ea8a52bd45f6e81e7c7
-  DatePicker: 05ddbd2b57d00ce6f44c1f0611ced32f948d33a6
   DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
-  Extended: c463225e0c29b2823847866c1b106827772ac678
   FBAEMKit: 5fbd0e8bd86fbb2f977fcf39f8a62569b52d1df3
   FBSDKCoreKit: 183e00947076af95435ac7ff622ea68c50860f80
   FBSDKCoreKit_Basics: 63539ccd3288849598d4936abe866f9b85320f51
@@ -136,6 +128,6 @@ SPEC CHECKSUMS:
   SendBirdUIKit: 3a5a979b7e9456f9a1baa8ba23c994cc8e584f33
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: 85fe8ff1718eb11bd24eb7ac40dd57c1b873fdbd
+PODFILE CHECKSUM: 35307f9828d9551b6626daac753b70666449b099
 
-COCOAPODS: 1.11.2
+COCOAPODS: 1.11.3

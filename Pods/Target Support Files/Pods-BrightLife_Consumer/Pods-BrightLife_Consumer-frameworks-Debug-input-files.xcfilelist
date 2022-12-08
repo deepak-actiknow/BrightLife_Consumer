@@ -2,9 +2,7 @@ ${PODS_ROOT}/Target Support Files/Pods-BrightLife_Consumer/Pods-BrightLife_Consu
 ${BUILT_PRODUCTS_DIR}/AARatingBar/AARatingBar.framework
 ${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
 ${BUILT_PRODUCTS_DIR}/AppAuth/AppAuth.framework
-${BUILT_PRODUCTS_DIR}/DatePicker/DatePicker.framework
 ${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework
-${BUILT_PRODUCTS_DIR}/Extended/Extended.framework
 ${BUILT_PRODUCTS_DIR}/FirebaseAuth/FirebaseAuth.framework
 ${BUILT_PRODUCTS_DIR}/FirebaseCore/FirebaseCore.framework
 ${BUILT_PRODUCTS_DIR}/FirebaseCoreDiagnostics/FirebaseCoreDiagnostics.framework

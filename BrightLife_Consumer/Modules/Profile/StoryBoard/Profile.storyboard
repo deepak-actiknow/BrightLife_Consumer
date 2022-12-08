@@ -416,13 +416,13 @@
                                                                                 <rect key="frame" x="5" y="7.6666666666666856" width="22" height="18"/>
                                                                             </imageView>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IND +91" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Vp-L1-3u8">
-                                                                                <rect key="frame" x="35.000000000000007" y="4.9999999999999982" width="64.666666666666686" height="23.333333333333329"/>
+                                                                                <rect key="frame" x="35" y="6.6666666666666856" width="62.666666666666657" height="20"/>
                                                                                 <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="17"/>
                                                                                 <color key="textColor" red="0.2274509804" green="0.22352941179999999" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.down" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="GzI-ge-J8H">
-                                                                                <rect key="frame" x="101.66666666666666" y="11.666666666666707" width="18.666666666666671" height="10.333333333333318"/>
+                                                                                <rect key="frame" x="99.666666666666657" y="11.666666666666707" width="18.666666666666671" height="10.333333333333318"/>
                                                                                 <color key="tintColor" red="0.2274509804" green="0.22352941179999999" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                             </imageView>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8W1-QV-oo0">
@@ -452,7 +452,7 @@
                                                                         </constraints>
                                                                     </view>
                                                                     <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="9529359620" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H9D-0T-HVx">
-                                                                        <rect key="frame" x="160" y="12.666666666666687" width="201" height="18.666666666666671"/>
+                                                                        <rect key="frame" x="160" y="13" width="201" height="18"/>
                                                                         <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="14"/>
                                                                         <textInputTraits key="textInputTraits" keyboardType="phonePad" textContentType="tel"/>
                                                                     </textField>
@@ -467,7 +467,7 @@
                                                                 </constraints>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                        <real key="value" value="0.0"/>
+                                                                        <real key="value" value="1"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                                         <real key="value" value="10"/>
@@ -498,16 +498,27 @@
                                                         <color key="textColor" red="0.2274509804" green="0.22352941179999999" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="DD/MM/YYYY" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EF5-ji-hW7">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3MZ-wy-3ov">
                                                         <rect key="frame" x="0.0" y="393" width="361" height="43.666666666666686"/>
-                                                        <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" smartDashesType="yes"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                <color key="value" red="0.89019607840000003" green="0.89019607840000003" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </textField>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fLt-Yz-52O">
+                                                                <rect key="frame" x="0.0" y="0.0" width="361" height="43.666666666666664"/>
+                                                                <color key="tintColor" red="0.2274509804" green="0.22352941179999999" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain" title="DD/MM/YYYY"/>
+                                                                <connections>
+                                                                    <action selector="datePickerButton:" destination="9UA-AK-K4u" eventType="touchUpInside" id="c1v-QN-3od"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="bottom" secondItem="fLt-Yz-52O" secondAttribute="bottom" id="CjZ-5N-6T5"/>
+                                                            <constraint firstItem="fLt-Yz-52O" firstAttribute="leading" secondItem="3MZ-wy-3ov" secondAttribute="leading" id="KHg-HH-Wq0"/>
+                                                            <constraint firstAttribute="trailing" secondItem="fLt-Yz-52O" secondAttribute="trailing" id="LPh-8v-oGi"/>
+                                                            <constraint firstItem="fLt-Yz-52O" firstAttribute="top" secondItem="3MZ-wy-3ov" secondAttribute="top" id="cS1-ZN-Gdq"/>
+                                                        </constraints>
+                                                    </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8rp-fp-PJ0">
                                                         <rect key="frame" x="0.0" y="436.66666666666663" width="361" height="43.666666666666686"/>
                                                         <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="14"/>
@@ -651,7 +662,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="60"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit Profile" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DkR-9a-skf">
-                                                <rect key="frame" x="157.33333333333334" y="20.333333333333329" width="78.666666666666657" height="19.333333333333329"/>
+                                                <rect key="frame" x="158" y="20.666666666666671" width="77.333333333333314" height="18.666666666666671"/>
                                                 <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="16"/>
                                                 <color key="textColor" red="0.2274509804" green="0.22352941179999999" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -670,7 +681,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TU5-qs-gsE">
-                                                <rect key="frame" x="345" y="15" width="34" height="30"/>
+                                                <rect key="frame" x="344" y="15" width="35" height="30"/>
                                                 <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="14"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="SAVE">
@@ -718,7 +729,7 @@
                     <connections>
                         <outlet property="countryCodeLabel" destination="8Vp-L1-3u8" id="Ej7-6z-M2M"/>
                         <outlet property="countryImageView" destination="uQ0-hB-GGL" id="s4a-qn-BRp"/>
-                        <outlet property="dateOfBirthTextField" destination="EF5-ji-hW7" id="J25-Ag-53j"/>
+                        <outlet property="datePickerButton" destination="fLt-Yz-52O" id="Ddp-nn-4Au"/>
                         <outlet property="dropDownCodeButton" destination="8W1-QV-oo0" id="xae-E4-37g"/>
                         <outlet property="emailTextField" destination="aWF-Qp-BUh" id="pAT-2n-RKR"/>
                         <outlet property="nameEditProfileTextField" destination="Yw9-MV-Sdc" id="Nr1-6V-hOU"/>

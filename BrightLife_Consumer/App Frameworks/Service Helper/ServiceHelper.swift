@@ -38,12 +38,24 @@ final class ServiceHelper {
             Loader.beginLoading(in: UIWindow.topWindow()!, allowUserIntraction: false)
         }
         var headers: HTTPHeaders? = nil
-//        if apiName != "login" {
-//            headers = [
-//                "Authorization": "Bearer \(DataServices.sharedInstance.user?.token ?? "")",
-//                "Accept": "application/json"
-//            ]
-//        }
+        if apiName != kLogin && apiName != kCreate && apiName != kCheckEmail && apiName != kVerifyOTP {
+            let TokenID = UserDefaults.standard.string(forKey: "Token") ?? ""
+            headers = [
+                "x-access-token": "\(TokenID)",
+                "Accept": "application/json"
+            ]
+        } else {
+            if DataServices.sharedInstance.isCreateHeader {
+                let TokenID = UserDefaults.standard.string(forKey: "Token") ?? ""
+                headers = [
+                    "x-access-token": "\(TokenID)",
+                    "Accept": "application/json"
+                ]
+                DataServices.sharedInstance.isCreateHeader = false
+            }
+        }
+        
+        
         
         AF.request(url, method: HTTPMethod(rawValue: method), parameters: parameters, encoding: URLEncoding.default, headers: headers).responseJSON { response in
             if showHud {
@@ -105,6 +117,5 @@ final class ServiceHelper {
             completionHandler(nil, error as NSError?)
             }
         }
-    }
-    
+    } 
 }

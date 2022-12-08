@@ -16,7 +16,6 @@ pod 'IQKeyboardManagerSwift'
 pod 'AARatingBar'
 pod 'SendBirdUIKit'
 pod 'Toast-Swift', '~> 5.0.0'
-pod 'DatePicker'
 
 
 end

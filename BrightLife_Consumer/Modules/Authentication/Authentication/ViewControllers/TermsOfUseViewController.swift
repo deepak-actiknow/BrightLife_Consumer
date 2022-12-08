@@ -9,14 +9,7 @@ import UIKit
 import WebKit
 
 class TermsOfUseViewController: UIViewController {
-  @IBOutlet weak var webView: WKWebView!
-
-//    override func loadView() {
-//        webView = WKWebView()
-//        webView.navigationDelegate = self
-//        view = webView
-//    }
-    
+  @IBOutlet weak var webView: WKWebView!    
     override func viewDidLoad() {
         super.viewDidLoad()
 

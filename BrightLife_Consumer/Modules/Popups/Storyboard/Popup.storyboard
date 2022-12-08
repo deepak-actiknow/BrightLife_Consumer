@@ -667,6 +667,95 @@ To complete the outstanding payment, add money to your wallet</string>
             </objects>
             <point key="canvasLocation" x="3204" y="150"/>
         </scene>
+        <!--Date Picker Popup-->
+        <scene sceneID="hgb-Us-8eq">
+            <objects>
+                <viewController storyboardIdentifier="DatePickerPopup" useStoryboardIdentifierAsRestorationIdentifier="YES" id="rNZ-b6-PyN" customClass="DatePickerPopup" customModule="BrightLife_Consumer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gNB-uY-3hP">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qeu-RP-c2H">
+                                <rect key="frame" x="0.0" y="572" width="393" height="280"/>
+                                <subviews>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="cBq-MD-o23">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="211"/>
+                                        <date key="minimumDate" timeIntervalSinceReferenceDate="-3187255870">
+                                            <!--1900-01-01 11:08:50 +0000-->
+                                        </date>
+                                        <date key="maximumDate" timeIntervalSinceReferenceDate="662641200">
+                                            <!--2021-12-31 11:00:00 +0000-->
+                                        </date>
+                                    </datePicker>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X9X-e6-wcL">
+                                        <rect key="frame" x="16" y="219" width="361" height="45"/>
+                                        <color key="backgroundColor" red="0.49019607840000001" green="0.38823529410000002" blue="0.81960784310000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="zEK-ok-caL"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="18"/>
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Select"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="dateSelected:" destination="rNZ-b6-PyN" eventType="touchUpInside" id="14w-OW-gvw"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vzL-wZ-N0I">
+                                        <rect key="frame" x="353" y="0.0" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="6we-Yy-wgh"/>
+                                            <constraint firstAttribute="height" constant="40" id="jpq-0w-eLA"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="cross" title=" "/>
+                                        <connections>
+                                            <action selector="backButtonAction:" destination="rNZ-b6-PyN" eventType="touchUpInside" id="NIo-KY-8jt"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="X9X-e6-wcL" secondAttribute="bottom" constant="16" id="65c-Om-rR6"/>
+                                    <constraint firstItem="cBq-MD-o23" firstAttribute="top" secondItem="Qeu-RP-c2H" secondAttribute="top" id="Cvo-ay-rJy"/>
+                                    <constraint firstItem="X9X-e6-wcL" firstAttribute="leading" secondItem="Qeu-RP-c2H" secondAttribute="leading" constant="16" id="IBR-2t-6aZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="X9X-e6-wcL" secondAttribute="trailing" constant="16" id="MId-fN-3ym"/>
+                                    <constraint firstItem="X9X-e6-wcL" firstAttribute="top" secondItem="cBq-MD-o23" secondAttribute="bottom" constant="8" id="dN0-Ab-2Rj"/>
+                                    <constraint firstAttribute="height" constant="280" id="dly-3y-b45"/>
+                                    <constraint firstAttribute="trailing" secondItem="cBq-MD-o23" secondAttribute="trailing" id="fUa-Kx-7pt"/>
+                                    <constraint firstItem="cBq-MD-o23" firstAttribute="leading" secondItem="Qeu-RP-c2H" secondAttribute="leading" id="mil-v8-dvR"/>
+                                    <constraint firstItem="vzL-wZ-N0I" firstAttribute="top" secondItem="Qeu-RP-c2H" secondAttribute="top" id="r7l-IK-bS8"/>
+                                    <constraint firstAttribute="trailing" secondItem="vzL-wZ-N0I" secondAttribute="trailing" id="y9A-Uo-AFu"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="rlX-H8-4gH"/>
+                        <color key="backgroundColor" white="0.25" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Qeu-RP-c2H" secondAttribute="bottom" id="6CL-tG-GZX"/>
+                            <constraint firstItem="Qeu-RP-c2H" firstAttribute="leading" secondItem="rlX-H8-4gH" secondAttribute="leading" id="9Un-qy-r2a"/>
+                            <constraint firstAttribute="trailing" secondItem="Qeu-RP-c2H" secondAttribute="trailing" id="Kio-yW-HPl"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bottomConstraits" destination="6CL-tG-GZX" id="MPR-Ii-HcL"/>
+                        <outlet property="datePicker" destination="cBq-MD-o23" id="zY0-gQ-ZlQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="18S-Lx-yvR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3916.7938931297708" y="150"/>
+        </scene>
     </scenes>
     <resources>
         <image name="cross" width="10" height="10"/>

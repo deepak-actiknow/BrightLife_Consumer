@@ -7,13 +7,12 @@
 
 import UIKit
 import DropDown
-import DatePicker
+
 
 class PhoneProfileViewController: UIViewController {
     
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailTexField: UITextField!
-    @IBOutlet weak var dateOfBirthTextField: UITextField!
     @IBOutlet weak var datePickerButton: UIButton!
     @IBOutlet weak var radioMale: UIButton!
     @IBOutlet weak var radioFemale: UIButton!
@@ -23,22 +22,25 @@ class PhoneProfileViewController: UIViewController {
     @IBOutlet weak var continueButton: UIButton!
     
     
+    
     let radioController = RadioButtonController ()
     
+    var radioButtonTitle: String = ""
     var nameOfUser: String = ""
     var emailOfUser: String = ""
     var birthdayOfUser: String = ""
     var genderOfUSer: String = ""
-    
+    var phoneNumber: String = ""
+    let authVM = AuthenticationViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         nameTextField.text = nameOfUser
         nameTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         emailTexField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         radioController.selectedButton?.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         RadioButtonInitiate()
-        
     }
     
     @objc func textFieldDidChange(_ sender: UITextField) {
@@ -59,20 +61,10 @@ class PhoneProfileViewController: UIViewController {
     }
     
     @IBAction func datePicketButtonAction(_ sender: UIButton) {
-        let minDate = DatePickerHelper.shared.dateFrom(day: 18, month: 08, year: 1940)!
-                let maxDate = DatePickerHelper.shared.dateFrom(day: 18, month: 08, year: Calendar.current.component(.year, from: Date()))!
-                let today = Date()
-                let datePicker = DatePicker()
-                datePicker.setup(beginWith: today, min: minDate, max: maxDate) { (selected, date) in
-                    if selected, let selectedDate = date {
-                        print(selectedDate.stringShort())
-                        sender.setTitle(selectedDate.string(), for: .normal)
-                    } else {
-                        print("Cancelled")
-                    }
-                }
-                // Display
-                datePicker.show(in: self, on: sender)
+        self.showDatePickerPopup { selectedDate in
+            sender.setTitle(selectedDate, for: .normal)
+            self.birthdayOfUser = sender.titleLabel?.text ?? ""
+        }
     }
     
     @IBAction func changeGender(sender: AnyObject) {
@@ -84,19 +76,20 @@ class PhoneProfileViewController: UIViewController {
         case 1:
             // Change to Male
             radioController.buttonArrayUpdated(buttonSelected: sender as! UIButton)
-            
+            radioButtonTitle = "Male"
         case 2:
             // Change to Female
             radioController.buttonArrayUpdated(buttonSelected: sender as! UIButton)
-            
+            radioButtonTitle = "Female"
         case 3:
             // Change to Others
             radioController.buttonArrayUpdated(buttonSelected: sender as! UIButton)
-            
+            radioButtonTitle = "Others"
         default:
             print("Are You Alien ?")
             return
         }
+        genderOfUSer = radioButtonTitle
     }
     
     @IBAction func actionContinue(_ sender: Any) {
@@ -115,8 +108,7 @@ class PhoneProfileViewController: UIViewController {
             AlertUtility().showAlert(title: "Attention!", message: "Fill Phone Number", buttonTitle: "OK", viewController: self)
             return
         } else  {
-                let viewController = UIStoryboard(name: "Main", bundle: .main).instantiateViewController(withIdentifier: "SeekViewController") as! SeekViewController
-                self.navigationController?.pushViewController(viewController, animated: true)
+            authVM.createProfile(target: self, name: nameTextField.text!, email: emailTexField.text!, phone: phoneNumber, dOB: datePickerButton.titleLabel?.text ?? "", gender: genderOfUSer, role: "Client")
         }
     }
 

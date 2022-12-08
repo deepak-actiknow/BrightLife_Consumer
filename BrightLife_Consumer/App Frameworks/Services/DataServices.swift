@@ -9,8 +9,8 @@ import Foundation
 
 final class DataServices {
     static let sharedInstance = DataServices()
-
-   
     
+    //to pass differnt parameter for same API endpoints 
+    var isCreateHeader: Bool = false
     
 }

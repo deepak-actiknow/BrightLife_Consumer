@@ -12,7 +12,7 @@ class RadioButtonController: NSObject {
     var buttonsArray: [UIButton]! {
         didSet {
             for b in buttonsArray {
-                b.setImage(UIImage(named: "radioOff"), for: .normal)
+                b.setImage(UIImage(named: "radioOffBlack"), for: .normal)
                 b.setImage(UIImage(named: "radioOn"), for: .selected)
             }
         }
@@ -31,6 +31,15 @@ class RadioButtonController: NSObject {
                 b.isSelected = true
             } else {
                 b.isSelected = false
+            }
+        }
+    }
+    
+    func buttonArrayMultipleSelected (buttonsSelected: UIButton) {
+        for b in buttonsArray {
+            if b == buttonsSelected {
+                selectedButton = b
+                b.isSelected = true
             }
         }
     }

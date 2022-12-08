@@ -25,6 +25,7 @@ class EditProfileViewController: UIViewController {
     @IBOutlet weak var countryCodeLabel: UILabel!
     @IBOutlet weak var countryImageView: UIImageView!
     @IBOutlet weak var countryCodeNumLabel: UILabel!
+    @IBOutlet weak var datePickerButton: UIButton!
     @IBOutlet weak var radioMale: UIButton!
     @IBOutlet weak var radioFemale: UIButton!
     @IBOutlet weak var radioOthers: UIButton!
@@ -54,7 +55,7 @@ class EditProfileViewController: UIViewController {
         nameEditProfileTextField.text = nameOfUser
         emailTextField.text = emailOfUser
         phoneNumberTextField.text = phoneOfuser
-        dateOfBirthTextField.text = birthdayOfUser
+       // dateOfBirthTextField.text = birthdayOfUser
         RadioButtonInitiate()
         dropDownActivate()
         UserDefaults.standard.set(nameEditProfileTextField.text, forKey: "nameInEditProfile")
@@ -110,6 +111,14 @@ class EditProfileViewController: UIViewController {
             return
         }
     }
+    
+    @IBAction func datePickerButton(_ sender: UIButton) {
+        self.showDatePickerPopup { selectedDate in
+            sender.setTitle(selectedDate, for: .normal)
+            self.birthdayOfUser = sender.titleLabel?.text ?? ""
+        }
+    }
+    
     
     @IBAction func actionSaveButton(_ sender: Any) {
         delegate?.didReceiveAllTheDetails(name: nameEditProfileTextField.text!, phone: phoneOfuser, email: emailOfUser)

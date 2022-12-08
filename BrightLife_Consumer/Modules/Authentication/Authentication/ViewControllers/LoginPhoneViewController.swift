@@ -36,6 +36,7 @@ class LoginPhoneViewController: UIViewController {
     var emailOfFbUser: String = ""
     var birthdayOfFBUser: String = ""
     var genderOfFBUser: String = ""
+    var emailOfGoogleUser: String = ""
     
     let authVM = AuthenticationViewModel()
 
@@ -46,6 +47,8 @@ class LoginPhoneViewController: UIViewController {
         googleLogin()
         
         receivedPhoneNumber = phoneNumberTextField.text ?? ""
+        UserDefaults.standard.set(phoneNumberTextField.text, forKey: "phoneNumber")
+        UserDefaults.standard.synchronize()
         //UserDefaults.standard.set(receivedPhoneNumber, forKey: "phoneText")
         loginMainView.makeRoundCorners()
         
@@ -61,7 +64,7 @@ class LoginPhoneViewController: UIViewController {
     
     
     @IBAction func actionSendOtp(_ sender: Any) {
-        authVM.sendOtp(target: self, number: phoneNumberTextField.text!)
+        authVM.sendOtp(target: self, number: phoneNumberTextField.text!, role: "Client")
     }
     
     @IBAction func actionPrivacyPolicy(_ sender: Any) {
@@ -95,12 +98,17 @@ class LoginPhoneViewController: UIViewController {
             print("FamilyName: \(String(describing: familyName))")
             print("profilePicUrl: \(String(describing: profilePicUrl))")
             
+            self.emailOfGoogleUser = emailAddress ?? ""
+            self.authVM.checkEmail(target: self, email: self.emailOfGoogleUser, role: "Client")
+            
             let viewController = UIStoryboard(name: "Main", bundle: .main).instantiateViewController(withIdentifier: "GoogleProfileViewController") as! GoogleProfileViewController
             viewController.nameOfUser = fullName ?? ""
             viewController.emailOfUser = emailAddress ?? ""
             //            viewController.emailLabel.isHidden = true
             //            viewController.emailTextView.isHidden = true
-            self.navigationController?.pushViewController(viewController, animated: true)
+            //            viewController.emailLabel.isHidden = true
+            //            viewController.emailTextField.isHidden = true
+        //    self.navigationController?.pushViewController(viewController, animated: true)
             
             
             user.authentication.do { authentication, error in
@@ -159,8 +167,8 @@ class LoginPhoneViewController: UIViewController {
                                 }
                     
                                 let viewController = UIStoryboard(name: "Main", bundle: .main).instantiateViewController(withIdentifier: "GoogleProfileViewController") as! GoogleProfileViewController
-                                viewController.emailLabel.isHidden = true
-                                viewController.emailTextView.isHidden = true
+                                viewController.emailLabel.isHidden = false
+                                viewController.emailTextField.isHidden = false
                                 viewController.nameOfUser = self.nameOfFbUser
                                 viewController.emailOfUser = self.emailOfFbUser
                                 //viewController.dateOfBirthTextField = birthdayOfFBUser
@@ -212,51 +220,7 @@ class LoginPhoneViewController: UIViewController {
             }
             task.resume()
         }
-        
-        //MARK: - faceBookLogin Func
-        //    func faceBookLogin () {
-        //        if let token = AccessToken.current,
-        //              !token.isExpired {
-        //              // User is logged in, do work such as go to next view controller.
-        //            let token = token.tokenString
-        //            let request = FBSDKLoginKit.GraphRequest(graphPath: "me", parameters: ["fields" : " id, email, first_name, last_name, picture, short_name, name, middle_name, name_format, age_range, birthday, gender, profile_pic"], tokenString: token, version: nil, httpMethod: .get)
-        //            request.start { (connection, result, error) in
-        //                if error == nil {
-        //                    let dict = result as! [String: AnyObject] as NSDictionary
-        //
-        //                    let name = dict.object(forKey: "name") as! String
-        //                    let email = dict.object(forKey: "email") as! String
-        //                    let birthday = dict.object(forKey: "birthday") as! String
-        //                    let gender = dict.object(forKey: "gender") as! String
-        //
-        //                    self.nameOfFbUser = name
-        //                    self.emailOfFbUser = email
-        //                    self.birthdayOfFBUser = birthday
-        //                    self.genderOfFBUser = gender
-        //
-        //                    print("Name: \(name)")
-        //                    print("Email: \(email)")
-        //                    print("Birthday: \(birthday)")
-        //                    print("Gender: \(gender)")
-        //                } else {
-        //                    print(error?.localizedDescription as Any)
-        //                }
-        //            }
-        //
-        //            let viewController = UIStoryboard(name: "Main", bundle: .main).instantiateViewController(withIdentifier: "GoogleProfileViewController") as! GoogleProfileViewController
-        //            viewController.emailLabel.isHidden = true
-        //            viewController.emailTextView.isHidden = true
-        //            viewController.nameOfUser = nameOfFbUser
-        //            viewController.emailOfUser = emailOfFbUser
-        //            //viewController.dateOfBirthTextField = birthdayOfFBUser
-        //            self.navigationController?.pushViewController(viewController, animated: true)
-        //        } else {
-        //            faceBookSignInButton.permissions = ["public_profile", "email"]
-        //            faceBookSignInButton.delegate = self
-        //        }
-        //    }
-        
-        
+                
         //MARK: - google Login Function
         func googleLogin () {
             if GIDSignIn.sharedInstance.hasPreviousSignIn() {

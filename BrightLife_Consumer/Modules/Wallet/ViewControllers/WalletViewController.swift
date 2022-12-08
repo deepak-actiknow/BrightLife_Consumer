@@ -64,18 +64,14 @@ extension WalletViewController: UICollectionViewDataSource, UICollectionViewDele
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let flowayout = collectionViewLayout as? UICollectionViewFlowLayout
-                let space: CGFloat = (flowayout?.minimumInteritemSpacing ?? 0.0) + (flowayout?.sectionInset.left ?? 0.0) + (flowayout?.sectionInset.right ?? 0.0)
-                let size:CGFloat = (collectionView.frame.size.width - space) / 2.0
-                return CGSize(width: size, height: 40)
-    }
-    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let cell = AmountCollectionCell()
         let viewController = UIStoryboard(name: "Wallet", bundle: .main).instantiateViewController(withIdentifier: "PaymentInfoViewController") as! PaymentInfoViewController
         //viewController.totalAmountLabel.text = cell.amountLabel.text
         self.navigationController?.pushViewController(viewController, animated: true)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: (UIScreen.main.bounds.width-32) / 2.1, height: 55)
     }
     
 }

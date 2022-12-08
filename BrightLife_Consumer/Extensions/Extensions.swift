@@ -51,6 +51,38 @@ extension UIButton {
         attributedString.addAttribute(NSAttributedString.Key.underlineStyle, value: NSUnderlineStyle.single.rawValue, range: NSRange(location: 0, length: text.count))
         self.setAttributedTitle(attributedString, for: .normal)
     }
+    // MARK: - UIButton+Aligment
+
+        func alignContentVerticallyByCenter(offset:CGFloat = 10) {
+            let buttonSize = frame.size
+
+            if let titleLabel = titleLabel,
+                let imageView = imageView {
+
+                if let buttonTitle = titleLabel.text,
+                    let image = imageView.image {
+                    let titleString:NSString = NSString(string: buttonTitle)
+                    let titleSize = titleString.size(withAttributes: [
+                        NSAttributedString.Key.font : titleLabel.font as Any
+                        ])
+                    let buttonImageSize = image.size
+
+                    let topImageOffset = (buttonSize.height - (titleSize.height + buttonImageSize.height + offset)) / 2
+                    let leftImageOffset = (buttonSize.width - buttonImageSize.width) / 2
+                    imageEdgeInsets = UIEdgeInsets(top: topImageOffset,
+                                                   left: leftImageOffset,
+                                                   bottom: 0,right: 0)
+
+                    let titleTopOffset = topImageOffset + offset + buttonImageSize.height
+                    let leftTitleOffset = (buttonSize.width - titleSize.width) / 2 - image.size.width
+
+                    titleEdgeInsets = UIEdgeInsets(top: titleTopOffset,
+                                                   left: leftTitleOffset,
+                                                   bottom: 0,right: 0)
+                }
+            }
+        }
+    
 }
 
 @IBDesignable extension UIView {
@@ -92,6 +124,44 @@ extension UIButton {
         get {
             guard let color = layer.borderColor else { return nil }
             return UIColor(cgColor: color)
+        }
+    }
+    
+    @IBInspectable var shadowColor: UIColor?{
+        set {
+            guard let uiColor = newValue else { return }
+            layer.shadowColor = uiColor.cgColor
+        }
+        get{
+            guard let color = layer.shadowColor else { return nil }
+            return UIColor(cgColor: color)
+        }
+    }
+
+    @IBInspectable var shadowOpacity: Float{
+        set {
+            layer.shadowOpacity = newValue
+        }
+        get{
+            return layer.shadowOpacity
+        }
+    }
+
+    @IBInspectable var shadowOffset: CGSize{
+        set {
+            layer.shadowOffset = newValue
+        }
+        get{
+            return layer.shadowOffset
+        }
+    }
+
+    @IBInspectable var shadowRadius: CGFloat{
+        set {
+            layer.shadowRadius = newValue
+        }
+        get{
+            return layer.shadowRadius
         }
     }
 }
@@ -138,7 +208,20 @@ extension UIWindow {
 }
 
 
+//MARK: - Extension: String
 
+extension String {
+    func base64Convert() -> UIImage{
+        if (self.isEmpty) {
+            return UIImage()
+        } else {
+            let temp = self.components(separatedBy: ",")
+            let dataDecoded : Data = Data(base64Encoded: temp[1], options: .ignoreUnknownCharacters)!
+            let decodedimage = UIImage(data: dataDecoded)
+            return decodedimage!
+        }
+    }
+}
 
 
 
